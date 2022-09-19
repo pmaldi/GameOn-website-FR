@@ -15,6 +15,9 @@ const modalCloseBtn = document.querySelector(".modal-btn-close"); //<= C'est le 
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
+modalbg.addEventListener("submit", function (e) {
+  e.preventDefault();
+})
 
 // launch modal form
 function launchModal() {
@@ -46,22 +49,42 @@ function validate() {
   let formIsValid = true;
 
   if (first.length < 2) {
-    alert("Merci de renseigner un prenom valide");
+    const error = document.getElementById("first_error")
+    error.style.display = "block"
+    error.innerText = "Veuillez entrer 2 caractères ou plus pour le champ du prénom."
+
     formIsValid = false
   }
 
   if (last.length < 2) {
-    alert("Merci de renseigner un nom valide");
+    const error = document.getElementById("last_error")
+    error.style.display = "block"
+    error.innerText = "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
+
     formIsValid = false
   }
 
   if (!email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
-    alert("Merci de renseigner un email valide");
+    const error = document.getElementById("email_error")
+    error.style.display = "block"
+    error.innerText = "Merci de renseigner un email valide";
+
+    formIsValid = false
+  }
+
+  if (birthdate.length != 10) {
+    const error = document.getElementById("birthdate_error")
+    error.style.display = "block"
+    error.innerText = "Vous devez entrer votre date de naissance.";
+
     formIsValid = false
   }
 
   if (isNaN(parseInt(quantity))) {
-    alert("Merci de renseigner un nombre de tournoi valide");
+    const error = document.getElementById("quantity_error")
+    error.style.display = "block"
+    error.innerText = "Merci de renseigner un nombre de tournoi valide";
+
     formIsValid = false
   }
 
@@ -70,12 +93,18 @@ function validate() {
   )
 
   if (isChecked === false) {
-    alert("Merci de selectionner la ville");
+    const error = document.getElementById("location_error")
+    error.style.display = "block"
+    error.innerText = "Vous devez choisir une option.";
+
     formIsValid = false
   }
 
   if (CCU === false) {
-    alert("Merci d'accepter les conditions d'utilisation");
+    const error = document.getElementById("checkbox_error")
+    error.style.display = "block"
+    error.innerText = "Vous devez vérifier que vous acceptez les termes et conditions.";
+
     formIsValid = false
   }
 
