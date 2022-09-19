@@ -8,9 +8,10 @@ function editNav() {
 }
 
 // DOM Elements
-const modalbg = document.querySelector(".bground");
-const modalBtn = document.querySelectorAll(".modal-btn");
-const formData = document.querySelectorAll(".formData");
+const modalbg = document.querySelector(".bground"); // <= Notre modal
+const modalBtn = document.querySelectorAll(".modal-btn"); // <= C'est le btn "Je m'inscris"
+const formData = document.querySelectorAll(".formData"); // <= C'est les données du formulaire
+const modalCloseBtn = document.querySelector(".modal-btn-close"); //<= C'est le btn "X"
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -21,3 +22,10 @@ function launchModal() {
 }
 
 
+// Close modal event
+modalCloseBtn.addEventListener("click", closeModal)
+
+// Close modal form
+function closeModal() {
+  modalbg.style.display = "none"
+}
