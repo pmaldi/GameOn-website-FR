@@ -14,7 +14,7 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  background-image: url("background.png");
+  /* background-image: url("background.png"); */
   font-family: var(--font-default);
   font-size: 18px;
   max-width: 1300px;
@@ -36,9 +36,24 @@ img {
 }
 .header-logo {
     float: left;
+    width: 120px;
+    margin-top: 15px;
+    margin-left: 35px;
+}
+
+.header-logo > img {
+  width: 100%;
 }
 .main-navbar {
     float: right;
+    margin-top: 15px;
+}
+
+.fa-bars {
+  color: #FF001B
+}
+.fa-bars:hover {
+  color: white
 }
 .topnav a {
   float: left;
@@ -461,7 +476,7 @@ input[data-error]::after {
 .btn-signup {
   outline: none;
   text-transform: capitalize;
-  font-size: 1.3rem;
+  font-size: 18px;
   padding: 15px 23px;
   margin: 0;
   margin-top: 59px;
@@ -478,7 +493,7 @@ input[data-error]::after {
 .copyrights {
   color: #fe142f;
   padding: 0;
-  font-size: 1rem;
+  font-size: 12px;
   margin: 60px 0 30px;
   font-weight: bolder;
 }
@@ -507,12 +522,14 @@ footer {
     display: none;
   }
   .hero-headline {
-    font-size: 4.5rem;
+    font-size: 40px;
+    font-weight: 500;
     white-space: normal;
   }
   .hero-text {
     width: unset;
-    font-size: 1.5rem;
+    font-size: 13px;
+    font-weight: 400;
   }
   .hero-img img {
     border-radius: 10px;
