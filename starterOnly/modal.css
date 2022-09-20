@@ -195,6 +195,11 @@ main {
   margin: 15px auto;
 }
 
+.confirmation-message {
+  text-align: center;
+  font-size: 25px;
+}
+
 label {
   font-family: var(--font-default);
   font-size: 17px;
